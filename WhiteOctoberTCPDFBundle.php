@@ -45,9 +45,7 @@ class WhiteOctoberTCPDFBundle extends Bundle
                     }
                 }
 
-                // and one special value which TCPDF will use if present
-                if (strtolower($k) == "pdf_font_name_main" && !defined($constKey))
-                {
+                elseif(!defined($constKey)) {
                     define($constKey, $v);
                 }
             }

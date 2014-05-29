@@ -40,6 +40,10 @@ class WhiteOctoberTCPDFBundle extends Bundle
                         if (($k === 'k_path_cache' || $k === 'k_path_url_cache') && !is_dir($value)) {
                             $this->createDir($value);
                         }
+                        if($k === 'k_path_fonts') {
+                            //make sur to add extra slash for tcpdf
+                            $value = realpath($value) . "/";
+                        }
 
                         define($constKey, $value);
                     }
